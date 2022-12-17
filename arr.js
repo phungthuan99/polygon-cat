@@ -1240,3 +1240,25 @@ var arr =[
         "2": 396
     }
 ]
+
+function Draw(){
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
+    ctx.reset();
+    ctx.beginPath();
+    ctx.moveTo(221, 272);
+    arr.forEach( function(ob,id){
+        id++;
+        timeout=id*30;
+        setTimeout(() => {
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'yellow'
+            ctx.lineTo(ob[1],ob[2]);
+            ctx.stroke();
+        }, timeout);
+        
+    });
+}
+function reSet(){
+    location.reload();
+}
